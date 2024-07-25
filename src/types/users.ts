@@ -34,3 +34,8 @@ export interface User {
   email: string;
   website: string;
 }
+
+export interface Column {
+  header: 'Name' | 'Email' | 'Website';
+  field: 'name' | 'email' | 'website';
+}

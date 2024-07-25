@@ -1,17 +1,23 @@
 import { Component } from '@angular/core';
-import { User } from '../../../types/users';
+import { Column, User } from '../../../types/users';
 import { UsersService } from '../../services/users.service';
 import { CommonModule } from '@angular/common';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TableModule],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss',
 })
 export class UserListComponent {
   users: User[] = [];
+  columns: Column[] = [
+    { header: 'Name', field: 'name' },
+    { header: 'Email', field: 'email' },
+    { header: 'Website', field: 'website' },
+  ];
 
   constructor(private usersService: UsersService) {}
 
