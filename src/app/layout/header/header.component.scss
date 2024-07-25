@@ -1,0 +1,12 @@
+.container {
+  padding: 0 2rem 0 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navigation {
+    display: flex;
+    gap: 2rem;
+  }
+}

@@ -1,6 +1,15 @@
+@import "./styles/variables.scss";
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+}
 
 .row {
   display: flex;
@@ -33,10 +42,18 @@
   text-align: right;
 }
 
+.mr-05 {
+  margin-right: 0.5rem;
+}
+
 .gap-1 {
   gap: 1rem;
 }
 
 .text-lg {
   font-size: 2rem;
+}
+
+.text-xl {
+  font-size: 6rem;
 }

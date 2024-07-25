@@ -8,8 +8,9 @@
   <ng-template pTemplate="body" let-user let-columns="columns">
     <tr>
       <td *ngFor="let col of columns">
+        <a class="pi pi-external-link no-decorator mr-05" [routerLink]="['/users', user.id]"
+          *ngIf="col.field === 'name'"></a>
         {{ user[col.field] }}
-        <a class="pi pi-external-link no-decorator" [routerLink]="['/users', user.id]" *ngIf="col.field === 'name'"></a>
       </td>
     </tr>
   </ng-template>
