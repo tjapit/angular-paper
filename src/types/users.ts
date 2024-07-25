@@ -1,38 +1,26 @@
-import { HttpContext, HttpHeaders, HttpParams } from '@angular/common/http';
-
-// from HttpClient.get() API
-export interface Options {
-  headers?:
-    | HttpHeaders
-    | {
-        [header: string]: string | string[];
-      };
-  context?: HttpContext;
-  observe?: 'body';
-  params?:
-    | HttpParams
-    | {
-        [param: string]:
-          | string
-          | number
-          | boolean
-          | ReadonlyArray<string | number | boolean>;
-      };
-  reportProgress?: boolean;
-  responseType: 'arraybuffer';
-  withCredentials?: boolean;
-  transferCache?:
-    | {
-        includeHeaders?: string[];
-      }
-    | boolean;
-}
-
 export interface User {
   id: number;
   name: string;
+  username: string;
   email: string;
   website: string;
+  address: Address;
+  phone: string;
+  company: Company;
+}
+
+export interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+  geo: { lat: string; lng: string };
+}
+
+export interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
 }
 
 export interface Column {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { Observable } from 'rxjs';
 import { User } from '../../types/users';
+import { API_URL } from '../constants';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +10,11 @@ import { User } from '../../types/users';
 export class UsersService {
   constructor(private apiService: ApiService) {}
 
-  getUsers(
-    url: string = 'https://jsonplaceholder.typicode.com/users',
-    params?: any,
-  ): Observable<User[]> {
-    return this.apiService.get(url, params);
+  getUsers(): Observable<User[]> {
+    return this.apiService.get(API_URL);
+  }
+
+  getUserById(id: number): Observable<User> {
+    return this.apiService.get(API_URL + `/${id}`);
   }
 }
