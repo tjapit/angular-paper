@@ -9,7 +9,10 @@ import { User } from '../../types/users';
 export class UsersService {
   constructor(private apiService: ApiService) {}
 
-  getUsers(url: string, params: any): Observable<User[]> {
+  getUsers(
+    url: string = 'https://jsonplaceholder.typicode.com/users',
+    params?: any,
+  ): Observable<User[]> {
     return this.apiService.get(url, params);
   }
 }

@@ -7,7 +7,10 @@
 
   <ng-template pTemplate="body" let-user let-columns="columns">
     <tr>
-      <td *ngFor="let col of columns">{{ user[col.field] }}</td>
+      <td *ngFor="let col of columns">
+        {{ user[col.field] }}
+        <a class="pi pi-external-link no-decorator" [routerLink]="['/users', user.id]" *ngIf="col.field === 'name'"></a>
+      </td>
     </tr>
   </ng-template>
 </p-table>

@@ -3,11 +3,12 @@ import { Column, User } from '../../../types/users';
 import { UsersService } from '../../services/users.service';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule, TableModule],
+  imports: [CommonModule, TableModule, RouterModule],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss',
 })
@@ -26,13 +27,11 @@ export class UserListComponent {
   }
 
   fetchUsers() {
-    this.usersService
-      .getUsers('http://jsonplaceholder.typicode.com/users', {})
-      .subscribe({
-        next: (data: User[]) => {
-          this.users = data;
-        },
-        error: (error) => console.log(error),
-      });
+    this.usersService.getUsers().subscribe({
+      next: (data: User[]) => {
+        this.users = data;
+      },
+      error: (error) => console.log(error),
+    });
   }
 }
