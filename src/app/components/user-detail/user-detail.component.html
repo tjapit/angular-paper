@@ -1,9 +1,10 @@
 <p-card class="card" [header]="user.name" [subheader]="user.username">
   <ng-template pTemplate="header">
-    <div class="row justify-center">
+    <div class="col all-center avatar-container">
       <i class="pi pi-user avatar"></i>
     </div>
   </ng-template>
+
   <ng-template pTemplate="content">
     <div class="row space-between">
       <a href="mailto:{{ user.email }}">{{ user.email }}</a>
@@ -22,8 +23,23 @@
       <p>Phone</p>
       <p>{{ user.phone }}</p>
     </div>
+    <div class="row space-between">
+      <p>Works at</p>
+      <p>{{ user.company.name }}</p>
+    </div>
+    <div class="row space-between">
+      <div class="job" *ngFor="let bs of user.company.bs.split(' ')">
+        {{ bs }}
+      </div>
+    </div>
   </ng-template>
+
   <ng-template pTemplate="footer">
-    <q><i>{{ user.company.catchPhrase }}</i></q>
+    <div class="col all-center gap-1 footer-container">
+      <q><i>{{ user.company.catchPhrase }}</i></q>
+      <a routerLink="">
+        <i class="pi pi-home text-lg"></i>
+      </a>
+    </div>
   </ng-template>
 </p-card>

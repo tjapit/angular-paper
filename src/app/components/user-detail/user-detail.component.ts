@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { User } from '../../../types/users';
 import { UsersService } from '../../services/users.service';
 import { CardModule } from 'primeng/card';
@@ -8,7 +8,7 @@ import { CardModule } from 'primeng/card';
 @Component({
   selector: 'app-user-detail',
   standalone: true,
-  imports: [CommonModule, CardModule],
+  imports: [CommonModule, CardModule, RouterModule],
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.scss',
 })

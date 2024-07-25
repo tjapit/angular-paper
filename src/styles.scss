@@ -16,6 +16,11 @@
   justify-content: center;
 }
 
+.all-center {
+  justify-content: center;
+  align-items: center;
+}
+
 .space-between {
   justify-content: space-between;
 }
@@ -26,4 +31,12 @@
 
 .text-right {
   text-align: right;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.text-lg {
+  font-size: 2rem;
 }

@@ -5,7 +5,19 @@
   align-items: center;
 }
 
-.avatar {
-  padding: 2rem;
-  font-size: 12rem;
+.avatar-container {
+  background-color: skyblue;
+  border-radius: 0.5rem 0.5rem 0 0;
+
+  .avatar {
+    padding: 2rem;
+    font-size: 12rem;
+  }
 }
+
+.job {
+  padding: 0.5rem;
+  border: 1px solid grey;
+  border-radius: 999px;
+}
+
