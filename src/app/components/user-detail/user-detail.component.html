@@ -1,4 +1,4 @@
-<p-card class="card" [header]="user.name" [subheader]="user.username">
+<p-card *ngIf="user" class="card" [header]="user?.name" [subheader]="user.username">
   <ng-template pTemplate="header">
     <div class="col all-center avatar-container">
       <i class="pi pi-user avatar"></i>
@@ -13,9 +13,9 @@
     <div class="row space-between">
       <p>Address</p>
       <div class="text-right">
-        <p>{{ user.address.street }}</p>
-        <p>{{ user.address.suite }}</p>
-        <p>{{ user.address.city }}, {{ user.address.zipcode }}</p>
+        <p>{{ user.address?.street }}</p>
+        <p>{{ user.address?.suite }}</p>
+        <p>{{ user.address?.city }}, {{ user.address?.zipcode }}</p>
       </div>
     </div>
     <div class="row space-between">
@@ -24,10 +24,10 @@
     </div>
     <div class="row space-between">
       <p>Works at</p>
-      <p>{{ user.company.name }}</p>
+      <p>{{ user.company?.name }}</p>
     </div>
     <div class="row space-between">
-      <div class="job" *ngFor="let bs of user.company.bs.split(' ')">
+      <div class="job" *ngFor="let bs of user.company?.bs?.split(' ')">
         {{ bs }}
       </div>
     </div>
@@ -35,7 +35,7 @@
 
   <ng-template pTemplate="footer">
     <div class="col all-center gap-1 footer-container">
-      <q><i>{{ user.company.catchPhrase }}</i></q>
+      <q><i>{{ user.company?.catchPhrase }}</i></q>
       <a routerLink="">
         <i class="pi pi-home text-lg"></i>
       </a>

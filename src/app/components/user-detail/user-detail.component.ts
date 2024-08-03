@@ -15,21 +15,21 @@ import { CardModule } from 'primeng/card';
 export class UserDetailComponent {
   user: User = {} as User;
   userId: number = 0;
-  route: ActivatedRoute = inject(ActivatedRoute);
 
-  constructor(private usersService: UsersService) {
-    this.userId = Number(this.route.snapshot.params['id']);
-  }
+  constructor(
+    private usersService: UsersService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
-    this.fetchUser();
+    this.userId = Number(this.route.snapshot.paramMap.get('id'));
+    this.fetchUser(this.userId);
   }
 
-  fetchUser() {
-    this.usersService.getUserById(this.userId).subscribe({
+  fetchUser(id: number) {
+    this.usersService.getUserById(id).subscribe({
       next: (data: User) => {
         this.user = data;
-        console.log(data);
       },
       error: (error) => console.log(error),
     });

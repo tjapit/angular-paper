@@ -4,9 +4,9 @@ export interface User {
   username: string;
   email: string;
   website: string;
-  address: Address;
+  address?: Address;
   phone: string;
-  company: Company;
+  company?: Company;
 }
 
 export interface Address {
